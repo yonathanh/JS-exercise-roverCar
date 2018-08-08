@@ -105,7 +105,7 @@ function checkRoverPosition (grid){
 //function that checkes if rover postions is on grid
 function testIfRoverleavesGrid(testie){
 
-  if((testie < 0)||(testie >= column)||(testie >= row)){
+  if((testie < 0)||(testie >= column)){
     false;
   }
   else{return true;}
