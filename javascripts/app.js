@@ -105,7 +105,7 @@ function checkRoverPosition (grid){
 //function that checkes if rover postions is on grid
 function testIfRoverleavesGrid(testie){
 
-  if((testie < 0)||(testie >= column)){
+  if((testie < 0)||(testie >= column)||(testie >= row)){
     false;
   }
   else{return true;}
@@ -124,52 +124,52 @@ function testIfRoverleavesGrid(testie){
   
     switch(rover) {
       case "N":
-          if(testIfRoverleavesGrid(yCoordinat-1)){
-          grid[yCoordinat-1][xCoordinat]=rover;
-          grid[yCoordinat][xCoordinat]=null;
-          console.log("new posetion ", checkRoverPosition (grid));
-          travelLog.push(checkRoverPosition (grid));
-          }
-          else {
-            console.log("sorry this direction is off the grid");
+         if(testIfRoverleavesGrid(yCoordinat-1)){
+            grid[yCoordinat-1][xCoordinat]=rover;
+            grid[yCoordinat][xCoordinat]=null;
+            console.log("new posetion ", checkRoverPosition (grid));
+            travelLog.push(checkRoverPosition (grid));
+            }
+        else {
+            console.log("sorry this direction is off the grid, Please add to grid size or change Direction");
           }
           break;
       case "S":
-      if(testIfRoverleavesGrid(yCoordinat+1)){
-        grid[yCoordinat+1][xCoordinat]=rover;
-        grid[yCoordinat][xCoordinat]=null;
-        console.log("new posetion ", checkRoverPosition (grid));
-        travelLog.push(checkRoverPosition (grid));
-        }
-        else {
-          console.log("sorry this direction is off the grid");
-        }
-        break;
+          if(testIfRoverleavesGrid(yCoordinat+1)){
+            grid[yCoordinat+1][xCoordinat]=rover;
+            grid[yCoordinat][xCoordinat]=null;
+            console.log("new posetion ", checkRoverPosition (grid));
+            travelLog.push(checkRoverPosition (grid));
+            }
+          else {
+              console.log("sorry this direction is off the grid, Please add to grid size or change Direction");
+            }
+            break;
       case "E":
-      if(testIfRoverleavesGrid(xCoordinat+1)){
-        grid[yCoordinat][xCoordinat+1]=rover;
-        grid[yCoordinat][xCoordinat]=null;
-        console.log("new posetion ", checkRoverPosition (grid));
-        travelLog.push(checkRoverPosition (grid));
-        }
-        else {
-          console.log("sorry this direction is off the grid");
-        }
-        break;
+          if(testIfRoverleavesGrid(xCoordinat+1)){
+            grid[yCoordinat][xCoordinat+1]=rover;
+            grid[yCoordinat][xCoordinat]=null;
+            console.log("new posetion ", checkRoverPosition (grid));
+            travelLog.push(checkRoverPosition (grid));
+            }
+          else {
+              console.log("sorry this direction is off the grid, Please add to grid size or change Direction");
+            }
+          break;
       case "W":
-      if(testIfRoverleavesGrid(xCoordinat-1)){
-        grid[yCoordinat][xCoordinat-1]=rover;
-        grid[yCoordinat][xCoordinat]=null;
-        console.log("new posetion ", checkRoverPosition (grid));
-        travelLog.push(checkRoverPosition (grid));
-        }
-        else {
-          console.log("sorry this direction is off the grid");
-        }
-        break;
-    } 
-   
-  }
+          if(testIfRoverleavesGrid(xCoordinat-1)){
+            grid[yCoordinat][xCoordinat-1]=rover;
+            grid[yCoordinat][xCoordinat]=null;
+            console.log("new posetion ", checkRoverPosition (grid));
+            travelLog.push(checkRoverPosition (grid));
+            }
+          else {
+              console.log("sorry this direction is off the grid, Please add to grid size or change Direction");
+            }
+          break;
+        } 
+      
+      }
 
 function moveBackward(rover){
   
@@ -181,54 +181,54 @@ function moveBackward(rover){
     var xCoordinat = coordinates[0];
     var yCoordinat = coordinates[1];
   
-    switch(rover) {
-      case "N":
-          if(testIfRoverleavesGrid(yCoordinat+1)){
-          grid[yCoordinat+1][xCoordinat]=rover;
-          grid[yCoordinat][xCoordinat]=null;
-          console.log("new posetion ", checkRoverPosition (grid));
-          travelLog.push(checkRoverPosition (grid));
-          }
-          else {
-            console.log("sorry this direction is off the grid");
-          }
-          break;
-      case "S":
-      if(testIfRoverleavesGrid(yCoordinat-1)){
+  switch(rover) {
+    case "N":
+        if(testIfRoverleavesGrid(yCoordinat+1)){
+        grid[yCoordinat+1][xCoordinat]=rover;
+        grid[yCoordinat][xCoordinat]=null;
+        console.log("new posetion ", checkRoverPosition (grid));
+        travelLog.push(checkRoverPosition (grid));
+        }
+        else {
+          console.log("sorry this direction is off the grid, Please add to grid size or change Direction");
+        }
+        break;
+    case "S":
+        if(testIfRoverleavesGrid(yCoordinat-1)){
         grid[yCoordinat-1][xCoordinat]=rover;
         grid[yCoordinat][xCoordinat]=null;
         console.log("new posetion ", checkRoverPosition (grid));
         travelLog.push(checkRoverPosition (grid));
         }
         else {
-          console.log("sorry this direction is off the grid");
+          console.log("sorry this direction is off the grid, Please add to grid size or change Direction");
         }
         break;
-      case "E":
-      if(testIfRoverleavesGrid(xCoordinat-1)){
+    case "E":
+        if(testIfRoverleavesGrid(xCoordinat-1)){
         grid[yCoordinat][xCoordinat-1]=rover;
         grid[yCoordinat][xCoordinat]=null;
         console.log("new posetion ", checkRoverPosition (grid));
         travelLog.push(checkRoverPosition (grid));
         }
         else {
-          console.log("sorry this direction is off the grid");
+          console.log("sorry this direction is off the grid, Please add to grid size or change Direction");
         }
         break;
-      case "W":
-      if(testIfRoverleavesGrid(xCoordinat+1)){
+    case "W":
+        if(testIfRoverleavesGrid(xCoordinat+1)){
         grid[yCoordinat][xCoordinat+1]=rover;
         grid[yCoordinat][xCoordinat]=null;
         console.log("new posetion ", checkRoverPosition (grid));
         travelLog.push(checkRoverPosition (grid));
         }
         else {
-          console.log("sorry this direction is off the grid");
+          console.log("sorry this direction is off the grid, Please add to grid size or change Direction");
         }
         break;
-    } 
-   
-  }
+      } 
+    
+    }
   
 function exe(commands){
 
